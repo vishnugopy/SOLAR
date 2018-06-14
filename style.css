@@ -1,0 +1,260 @@
+body{
+    background-color:;
+}
+
+#panel{
+    display:none;
+    position:absolute;
+    left:93%;
+    top:13%;
+}
+
+img{
+    width:50px;
+    height:50px;
+}
+
+
+#panel h3:nth-child(1){
+ color:#5783c2;
+ margin-left:-30%;
+}
+#panel h3:nth-child(2){
+ color:#f3951f;
+ margin-left:-20%;
+}
+#panel h3:nth-child(3){
+ color:#3c4094;
+ margin-left:-15%;
+}
+#panel h3:nth-child(4){
+ color:#169e9d; 
+ margin-left:-20%;
+}
+#panel h3:nth-child(5){
+ color:#ea644d;
+ margin-left:-30%;
+}
+
+
+section.header-top{
+    position:absolute;
+/*    top:-100px;
+    left:-300px;*/
+    width:50%;
+    height:50%;
+}
+.bg{
+  width:80%;
+  height:auto;
+  filter:brightness(200%);
+  z-index:-5;
+  position:absolute;
+  opacity:1;
+  top:10%;
+  left:10%;
+}
+
+section.header-top a img{
+    width:90%;
+    height:auto;
+    margin:5%;
+}
+section.header-top a{ 
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
+section.header-top a{
+    color:currentColor;
+}
+section.header-top .wrapper {
+  padding-bottom: 50%;
+  position: relative;
+  width:50%;
+    height:auto;
+}
+
+section.header-top .wrapper:hover .orbit{
+    animation-play-state: paused; 
+}
+.solar-system {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.positioner {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  color:blue;
+}
+.orbit {
+ /* border: 1px solid rgba(255, 255, 255);*/
+  border-radius: 50%;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-name: orbit;
+  animation-timing-function: linear;
+}
+.txt{
+    text-shadow:1px 1px 1px black;
+    font-family: 'PT Mono', monospace;
+    animation-name: animtext;
+    animation-timing-function:ease;
+    animation-duration: 3s;
+    font-size:1.5vw;
+}
+
+
+.planet{
+  border-radius: 50%;
+  display: block;
+}
+
+.planet {
+  background-color:currentColor;
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.mercury {
+  position:relative;
+  top:57%;
+  left:72%;
+  color:#5783c2;
+  height: 18%;
+  width: 18%; 
+  z-index:5;
+   
+}
+.mercury .planet {
+  height:30%;
+  width: 30%;
+}
+
+.mercury .planet{
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-name: defend;
+  animation-timing-function: linear;   
+}
+
+.wrapper:hover .planet{
+  animation-play-state: paused;  
+}
+
+
+.venus {
+  color:#f3951f;
+  height: 54%;
+  width: 54%;
+  z-index:4;
+}
+.venus .planet {
+  height:14%;
+  width: 14%;
+}
+.earth {
+  animation-delay: -2.5s;
+  animation-duration: 25s;
+  color:#3c4094;
+  height: 64%;
+  width: 64%;
+  z-index:3;
+}
+.earth .planet {
+  height: 10%;
+  width: 10%;
+}
+.mars {
+  position:relative;
+  top:13%;
+  left:32%;
+  animation-delay:1s;
+  animation-duration: 10s;
+  color:#169e9d;
+  height:22%;
+  width:22%;
+  z-index:6;  
+}
+.mars .planet {
+  height:30%;
+  width: 30%;
+}
+.jupiter {
+  animation-delay: -55s;
+  animation-duration: 55s;
+  color: #ea644d;
+  height: 74%;
+  width:74%;
+  z-index:2;
+}
+.jupiter .planet {
+  height: 12%;
+  width: 12%;
+}
+
+
+@keyframes orbit {
+  0% {
+    transform: translateY(-50%) translateX(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-50%) translateX(-50%) rotate(360deg);
+  }
+}
+
+
+@keyframes defend{
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(-360deg);
+		}
+}
+
+
+@keyframes animtext {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+      -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+      clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+  }
+  20% {
+      transform: translateY(0);
+      opacity: 1;
+      -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+      clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+  }
+  80% {
+       transform: translateY(0);
+       opacity: 1;
+      -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+      clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+  }
+  100% {
+       transform: translateY(50px);
+       opacity: 0;
+      -webkit-clip-path: polygon(100% 0, 100% -0%, 0 100%, 0 100%);
+      clip-path: polygon(100% 0, 100% -0%, 0 100%, 0 100%);
+    
+  }
+}
+
+/*
+
+@media screen and (max-width: 850px) {
+section.header-top{
+        visibility: hidden;
+    }
+}
+*/
+
