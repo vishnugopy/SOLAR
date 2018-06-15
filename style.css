@@ -2,12 +2,7 @@ body{
     background-color:;
 }
 
-#panel{
-    display:none;
-    position:absolute;
-    left:93%;
-    top:13%;
-}
+
 
 img{
     width:50px;
@@ -15,26 +10,6 @@ img{
 }
 
 
-#panel h3:nth-child(1){
- color:#5783c2;
- margin-left:-30%;
-}
-#panel h3:nth-child(2){
- color:#f3951f;
- margin-left:-20%;
-}
-#panel h3:nth-child(3){
- color:#3c4094;
- margin-left:-15%;
-}
-#panel h3:nth-child(4){
- color:#169e9d; 
- margin-left:-20%;
-}
-#panel h3:nth-child(5){
- color:#ea644d;
- margin-left:-30%;
-}
 
 
 section.header-top{
@@ -92,23 +67,34 @@ section.header-top .wrapper:hover .orbit{
   transform: translate3d(-50%, -50%, 0);
   color:blue;
 }
-.orbit {
- /* border: 1px solid rgba(255, 255, 255);*/
+.orbit{
+ /* border: 1px solid green;*/
   border-radius: 50%;
   animation-duration: 10s;
   animation-iteration-count: infinite;
   animation-name: orbit;
   animation-timing-function: linear;
 }
-.txt{
+
+
+
+.txt1{
+    position:absolute;
+    margin-left:10%;
+    left:98%;
+    top:-70%;
     text-shadow:1px 1px 1px black;
     font-family: 'PT Mono', monospace;
+    font-size:1vw;
+    visibility:hidden;
+    animation-duration:1s;
     animation-name: animtext;
-    animation-timing-function:ease;
-    animation-duration: 3s;
-    font-size:1.5vw;
+    animation-timing-function: linear;
 }
 
+.planet:hover .txt1{
+  visibility:visible;
+}
 
 .planet{
   border-radius: 50%;
@@ -138,15 +124,34 @@ section.header-top .wrapper:hover .orbit{
   width: 30%;
 }
 
-.mercury .planet{
+.mercury .planet,.venus .planet,.mars .planet{
+    /*,.txt1*/
   animation-duration: 10s;
   animation-iteration-count: infinite;
   animation-name: defend;
   animation-timing-function: linear;   
 }
 
+.jupiter .planet{
+  animation-duration: 40s;
+  animation-iteration-count: infinite;
+  animation-name: defend;
+  animation-timing-function: linear;    
+}
+
+.earth .planet{
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-name: defend;
+  animation-timing-function: linear;    
+}
+
 .wrapper:hover .planet{
   animation-play-state: paused;  
+}
+
+.wrapper:hover .txt1{
+  animation-play-state: paused;      
 }
 
 
@@ -161,8 +166,7 @@ section.header-top .wrapper:hover .orbit{
   width: 14%;
 }
 .earth {
-  animation-delay: -2.5s;
-  animation-duration: 25s;
+animation-duration:30s;
   color:#3c4094;
   height: 64%;
   width: 64%;
@@ -176,8 +180,6 @@ section.header-top .wrapper:hover .orbit{
   position:relative;
   top:13%;
   left:32%;
-  animation-delay:1s;
-  animation-duration: 10s;
   color:#169e9d;
   height:22%;
   width:22%;
@@ -188,8 +190,7 @@ section.header-top .wrapper:hover .orbit{
   width: 30%;
 }
 .jupiter {
-  animation-delay: -55s;
-  animation-duration: 55s;
+  animation-duration:40s;
   color: #ea644d;
   height: 74%;
   width:74%;
