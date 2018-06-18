@@ -81,8 +81,8 @@ section.header-top .wrapper:hover .orbit{
 .txt1{
     position:absolute;
     margin-left:10%;
-    left:98%;
-    top:-70%;
+    left:120%;
+    top:-350%;
     text-shadow:1px 1px 1px black;
     font-family: 'PT Mono', monospace;
     font-size:1vw;
@@ -90,6 +90,18 @@ section.header-top .wrapper:hover .orbit{
     animation-duration:1s;
     animation-name: animtext;
     animation-timing-function: linear;
+}
+
+.txt1::before{
+    display:block;
+    content:"";
+    width:50px;
+    height:2px;
+    background:currentcolor;
+    position:absolute;
+    transform: rotate(-80deg);
+    top:200%;
+    left:-220%;
 }
 
 .planet:hover .txt1{
